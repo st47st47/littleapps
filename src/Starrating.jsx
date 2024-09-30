@@ -21,7 +21,7 @@ const StarRating = () => {
 
     return (
         <div className={styles.starftr} style={{ right: here ? '0px' : '100vw' }}>
-            <button className={styles.ftrbtn} onClick={() => { setHere((prev) => { return !prev }) }} style={{ right: here ? '20px' : '-30px' }}>{here ? 'x' : 'o'}</button>
+            <button className={styles.ftrbtn} onClick={() => { setHere((prev) => { return !prev }) }} style={{ right: here ? '20px' : '-30px', bottom: !here && '0px', top: !here && '87%' }}>{here ? 'x' : 'o'}</button>
             <h1>rating</h1>
             <div className={styles.card}>
                 {
