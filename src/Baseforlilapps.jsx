@@ -3,6 +3,8 @@ import styles from './Baseforlilapps.module.css'
 
 import { Outlet, NavLink } from 'react-router-dom'
 
+import Starrating from './Starrating'
+
 const Baseforlilapps = () => {
     const [inside, setInside] = useState(true)
     return (
@@ -22,6 +24,8 @@ const Baseforlilapps = () => {
             </nav>
 
             <Outlet />
+
+            <Starrating />
         </>
     )
 }
