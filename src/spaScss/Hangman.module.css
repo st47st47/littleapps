@@ -1,0 +1,65 @@
+.hero {
+    height: 85%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.livesText {
+    text-align: center;
+    color: white;
+}
+
+.underlines {
+    width: 80px;
+    height: 4px;
+    background-color: red;
+}
+
+.answer {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.char {
+    text-align: center;
+    color: red;
+}
+
+.ltrbtn {
+    background-color: black;
+    border: 1px solid red;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.ltrbtn:hover {
+    transform: scale(1.2);
+}
+
+.gameOver {
+    color: white;
+    text-align: center;
+}
+
+.playAgainButton {
+    background-color: black;
+    border: 2px solid red;
+    color: white;
+    width: 100%;
+    height: 20%;
+    cursor: pointer;
+}
+
+
+/*  */
+
+@media screen and (max-width:600px) {
+    .hero {
+        height: 100%;
+    }
+}

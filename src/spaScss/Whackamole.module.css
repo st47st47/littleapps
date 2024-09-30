@@ -1,0 +1,25 @@
+.hero {
+    height: 90%;
+    width: 100%;
+}
+
+.wrapper {
+    background-color: black;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.wam {
+    height: 100%;
+    width: 100%;
+}
+
+
+/*  */
+@media screen and (max-width:600px) {
+    .hero {
+        height: 100%;
+    }
+}

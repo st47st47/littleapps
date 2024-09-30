@@ -1,0 +1,38 @@
+.hero {
+    height: 85%;
+}
+
+.leaflet-container {
+    box-sizing: border-box;
+    height: 90%;
+    width: 90%;
+    border: 10px solid red;
+}
+
+/*  */
+
+.popupstuffcunt {
+    display: flex;
+    flex-direction: column;
+}
+
+/*  */
+
+.rmvbtn {
+    background-color: #ff4d4d;
+    margin: 1px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.rmvbtn:hover {
+    background-color: #ff1a1a;
+}
+
+@media screen and (max-width:600px) {
+    .hero {
+        height: 100%;
+    }
+}

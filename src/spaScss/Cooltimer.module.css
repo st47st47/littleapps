@@ -1,0 +1,89 @@
+.hero {
+    height: 85%;
+}
+
+.myclock {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 10px solid wheat; */
+
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+
+.timerh1 {
+    color: red;
+}
+
+.topedge,
+.bottomedge {
+    position: absolute;
+    height: 5px;
+    width: 200px;
+    background-color: gray;
+
+    transition: width 1s ease;
+}
+
+.leftedge,
+.rightedge {
+    position: absolute;
+    width: 5px;
+    height: 200px;
+    background-color: gray;
+
+    transition: height 1s ease;
+}
+
+.topedge {
+    top: 0px;
+    left: 0px;
+}
+
+.bottomedge {
+    top: 100%;
+    right: 0px;
+}
+
+.leftedge {
+
+    left: 0px;
+    bottom: 0px;
+
+}
+
+.rightedge {
+
+    right: 0px;
+    top: 0px
+}
+
+.ctbtn {
+    background-color: black;
+    border: 4px solid red;
+    color: red;
+    width: 10%;
+    height: 10%;
+
+    cursor: pointer;
+
+    margin: 1%;
+}
+
+
+/*  */
+
+@media screen and (max-width:600px) {
+    .hero {
+        height: 100%;
+    }
+
+    .ctbtn {
+        width: 50%;
+        height: 10%;
+    }
+}

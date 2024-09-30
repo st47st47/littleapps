@@ -1,0 +1,69 @@
+.hero {
+    height: 85%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+    background-color: #1a1a1a;
+}
+
+.input {
+    padding: 10px;
+    border: 2px solid #444;
+    border-radius: 4px;
+    margin-right: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+.input:focus {
+    border-color: red;
+    outline: none;
+}
+
+.select {
+    padding: 10px;
+    border: 2px solid #444;
+    border-radius: 4px;
+    margin-right: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+.select:focus {
+    border-color: red;
+    outline: none;
+}
+
+.button {
+    padding: 10px 15px;
+    background-color: black;
+    color: red;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #ff56b3;
+    color: black;
+}
+
+.output {
+    margin-top: 20px;
+    color: #fff;
+    white-space: nowrap;
+}
+
+/*  */
+
+
+@media screen and (max-width:600px) {
+    .hero {
+        height: 100%;
+    }
+}

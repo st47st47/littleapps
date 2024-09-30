@@ -1,0 +1,22 @@
+.hero {
+    height: 85%;
+    background-color: black;
+    color: red;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.strt {
+    background-color: black;
+    color: red;
+}
+
+@media screen and (max-width: 600px) {
+    .hero {
+        height: 100vh;
+        font-size: 0.5em;
+    }
+}

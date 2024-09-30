@@ -1,0 +1,39 @@
+.fourzerofour {
+    margin: auto;
+    color: red;
+    cursor: default;
+
+    font-size: 5em;
+
+    animation-name: bzzz;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+.hero {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+}
+
+/*  */
+
+@keyframes bzzz {
+    0% {
+        color: red;
+        text-shadow: 10px 0px 10px purple, -10px 0px 10px purple, 0px 10px 10px purple, 0px -10px 10px purple;
+
+    }
+
+    100% {
+        color: black;
+        text-shadow: 10px 0px 10px red, -10px 0px 10px red, 0px 10px 10px red, 0px -10px 10px red;
+    }
+}
