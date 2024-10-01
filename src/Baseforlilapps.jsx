@@ -7,6 +7,13 @@ import Starrating from './Starrating'
 
 const Baseforlilapps = () => {
     const [inside, setInside] = useState(true)
+
+    setTimeout(() => {
+        document.getElementById('starratingmodal').showModal()
+    }, 10000)
+
+
+
     return (
         <>
             <button className={styles.navbtn} onClick={() => { setInside((prev) => { return !prev }) }}>{inside ? 'O' : 'X'}</button>
@@ -25,7 +32,11 @@ const Baseforlilapps = () => {
 
             <Outlet />
 
-            <Starrating />
+
+            <dialog id='starratingmodal' className={styles.dialog}>
+                <button className={styles.closerating} onClick={() => { document.getElementById('starratingmodal').close() }}>x</button>
+                <Starrating />
+            </dialog>
         </>
     )
 }

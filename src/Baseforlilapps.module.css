@@ -62,3 +62,60 @@
         display: block;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */
+
+.dialog {
+    width: 50%;
+    height: 10%;
+
+    position: relative;
+
+    padding: 0px;
+
+    background-color: transparent;
+
+    border: 1px solid red;
+}
+
+.closerating {
+    position: absolute;
+
+    background-color: transparent;
+    border: 1px solid red;
+    color: red;
+
+    cursor: pointer;
+}
+
+
+.closerating:hover {
+    background-color: red;
+    color: black;
+}

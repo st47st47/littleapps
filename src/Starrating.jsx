@@ -7,7 +7,6 @@ import gold from '../src/spaSstatic/goldstar.png'
 const startarray = new Array(5).fill('').map((each, idx) => { return { idee: idx, content: transp } })
 
 const StarRating = () => {
-    const [here, setHere] = useState(true)
 
     const [stars, setStars] = useState(startarray)
 
@@ -20,8 +19,7 @@ const StarRating = () => {
     }
 
     return (
-        <div className={styles.starftr} style={{ right: here ? '0px' : '100vw' }}>
-            <button className={styles.ftrbtn} onClick={() => { setHere((prev) => { return !prev }) }} style={{ right: here ? '20px' : '-30px', bottom: !here && '0px', top: !here && '87%' }}>{here ? 'x' : 'o'}</button>
+        <div className={styles.starftr} >
             <h1>rating</h1>
             <div className={styles.card}>
                 {
