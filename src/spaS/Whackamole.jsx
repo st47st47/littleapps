@@ -1,76 +1,64 @@
-import React, { useEffect, useRef, useState } from 'react'
-import style from '../spaScss/Whackamole.module.css'
-import hole from '../spaSstatic/hole.png'
-import mole from '../spaSstatic/mole.png'
+import React, { useRef, useState } from 'react'
+import styles from '../spaScss/Whackamole.module.css'
 
+import molepic from '../spaSstatic/mmole.png'
+import holepic from '../spaSstatic/hhole.png'
 
-const starting = [hole, hole, hole, hole, hole, hole, hole, hole, hole]
+const startArray = new Array(9).fill(holepic)
 
 const Whackamole = () => {
-    const myref = useRef(null)
+    const timeRef = useRef(null)
+    const [inProgress, setInProgress] = useState(false)
 
-    const [gameStatus, setGameStatus] = useState(true)
-
-    const [imagesList, setImagesList] = useState(starting)
-
+    const [holesAndMoles, setHolesAndMoles] = useState(
+        startArray
+    )
 
     const [score, setScore] = useState(0)
 
 
-    function nameGrabber(path) {
-        return path.split('/').pop().split('.').shift();
+    function play() {
+        setInProgress(true)
+        clearInterval(timeRef.current)
+        timeRef.current = setInterval(() => {
+            setHolesAndMoles(
+                startArray.map((each, idx) => {
+                    return idx == Math.floor(Math.random() * 10) % 9 ? molepic : holepic
+                })
+            )
+        }, 1000)
+    }
+    function pause() {
+        clearInterval(timeRef.current)
+        setInProgress(false)
     }
 
-    function handleClick2(status) {
-        if (nameGrabber(status) === 'mole') {
-            setScore((prev) => prev + 1)
+
+    function hndlclk(argu) {
+        if (inProgress) {
+            if (argu == molepic) {
+                setScore((prev) => { return prev + 1 })
+            }
         }
-        else {
-            return
-        }
-        console.log(score)
     }
-
-
-    function resumeGame() {
-        myref.current = setInterval(() => {
-            const randomIndex = Math.floor(Math.random() * imagesList.length);
-
-            const newgrid = [...imagesList]
-            newgrid[randomIndex] = mole
-
-            setImagesList(newgrid)
-        }, 1000);
-    }
-
-
-    function pausegame() {
-        clearInterval(myref.current)
-        setImagesList(starting)
-    }
-
-
-    useEffect(() => {
-        resumeGame()
-        return () => clearInterval(myref.current)
-
-    }, [])
 
 
     return (
-        <div className={style.hero} style={{ backgroundColor: 'black' }}>
-            <h1 style={{ backgroundColor: 'black', color: 'red', margin: '0px', textAlign: 'center' }}>score: {score}</h1>
-            <button style={{ backgroundColor: 'black', color: 'red' }} onClick={() => { setGameStatus((prev) => { return !prev }); gameStatus ? pausegame() : resumeGame() }}>{gameStatus ? 'pause' : 'resume'}</button>
-            <div className={style.wrapper}>
-                {
-                    imagesList.map((eachImage, i) => {
-                        return <div style={{ width: '80%', height: '80%', display: 'flex', justifyContent: 'center' }}>
-                            <img className={style.wam} key={i} src={eachImage} onClick={() => { handleClick2(eachImage) }} />
-                        </div>
-                    })
-                }
-            </div>
-        </div>
+        <>
+            <div className={styles.wamhero}>
+                <h1 className={styles.wamh1}>score: {score}</h1>
+                <button onClick={() => { inProgress ? pause() : play() }} className={styles.plpa}>{inProgress ? 'pause' : 'play'}</button>
+                <div className={styles.wamboard}>
+                    {
+                        holesAndMoles.map((each) => {
+                            return <div style={{ width: '100%', height: '100%', objectFit: 'contain' }}>
+                                <img src={each} onClick={() => { hndlclk(each) }} width='100%' height='100%' />
+                            </div>
+                        })
+                    }
+                </div>
+            </div >
+        </>
     )
 }
 

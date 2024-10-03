@@ -1,25 +1,43 @@
-.hero {
-    height: 90%;
-    width: 100%;
+.wamhero {
+    height: 85vh;
+    background-color: black;
+    color: red;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-.wrapper {
-    background-color: black;
-    height: 100%;
+.wamh1 {
+    text-align: center;
+    margin: 0px;
+}
+
+.wamboard {
+    width: 500px;
+    height: 500px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    gap: 2px;
+
+    margin: auto;
 }
 
-.wam {
-    height: 100%;
-    width: 100%;
+.plpa {
+    background-color: black;
+    color: red;
+    margin-left: 50%
 }
 
 
 /*  */
+
 @media screen and (max-width:600px) {
-    .hero {
-        height: 100%;
+    .wamhero {
+        height: 100vh;
+
     }
 }
