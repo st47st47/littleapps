@@ -7,6 +7,7 @@ const Typingspeed = () => {
 
     const myref = useRef(null)
 
+
     const [score, setScore] = useState(0)
     const [timeLeft, setTimeLeft] = useState(5)
 
@@ -57,11 +58,13 @@ const Typingspeed = () => {
     }
 
 
-    console.log(timeLeft)
+
 
 
     return (
         <div className={styles.hero}>
+
+
             <div style={{ width: '60%', fontSize: '2em' }}>
                 {
                     letters.map((each) => {

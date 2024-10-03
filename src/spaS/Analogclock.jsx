@@ -19,13 +19,12 @@ const AnalogClock = () => {
         }, 1000);
     }
 
-    console.log(time.hours, time.minutes)
 
 
 
     return (
         <div className="hero" style={{ backgroundColor: 'black', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <h1 style={{ margin: '0px', color: 'chartreuse' }}>time: {String(time.hours).padStart(2, '0')}:{String(time.minutes).padStart(2, '0')}:{String(time.seconds).padStart(2, '0')} AM</h1>
+            <h1 style={{ margin: '0px', color: 'chartreuse' }}>time: {String(time.hours).padStart(2, '0')}:{String(time.minutes).padStart(2, '0')}:{String(time.seconds).padStart(2, '0')}</h1>
             <div className='myclock'>
                 {
                     Array(12).fill('').map((each, idx) => { return idx == 0 ? 12 : idx % 13 }).map((each, idx) => { return <div style={{ transform: `rotate(${idx * 30}deg)` }} className='spoke'>{each}</div> })
