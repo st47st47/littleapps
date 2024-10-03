@@ -9,9 +9,11 @@
     align-items: center;
 }
 
-.strt {
+.strt,
+.rstrt {
     background-color: black;
     color: red;
+    margin-left: 50%;
 }
 
 @media screen and (max-width: 600px) {

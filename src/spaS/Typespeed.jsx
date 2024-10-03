@@ -3,18 +3,21 @@ import React, { useEffect, useRef, useState } from 'react'
 import styles from '../spaScss/Typespeed.module.css'
 
 const phrase = 'The sun dipped below the horizon, casting a warm golden glow across the landscape. As the day transitioned into twilight, the sky transformed into a canvas of vibrant hues—deep oranges, soft pinks, and rich purples blending seamlessly together. The gentle rustle of leaves in the evening breeze created a soothing melody, while the distant chirping of crickets signaled the arrival of night. In this serene moment, time seemed to stand still, inviting reflection and a sense of peace that enveloped the world in a comforting embrace.'
+
+const startarray = phrase.split('').map((each, idx) => {
+    return { idee: idx, let: each, status: false }
+})
+
 const Typingspeed = () => {
 
-    const myref = useRef(null)
+    const timeRef = useRef(null)
 
 
     const [score, setScore] = useState(0)
     const [timeLeft, setTimeLeft] = useState(5)
 
     const [letters, setLetters] = useState(
-        phrase.split('').map((each, idx) => {
-            return { idee: idx, let: each, status: false }
-        })
+        startarray
     )
 
     const [cursor, setCursor] = useState(0)
@@ -22,9 +25,17 @@ const Typingspeed = () => {
 
 
     function strt() {
-        myref.current = setInterval(() => {
+        clearInterval(timeRef.current)
+        timeRef.current = setInterval(() => {
             setTimeLeft((prev) => { return prev - 1 })
         }, 1000);
+    }
+
+    function rst() {
+        setScore(0)
+        setTimeLeft(5)
+        setLetters(startarray)
+        setCursor(0)
     }
 
 
@@ -54,7 +65,7 @@ const Typingspeed = () => {
 
 
     if (timeLeft == 0) {
-        clearInterval(myref.current)
+        clearInterval(timeRef.current)
     }
 
 
@@ -74,14 +85,26 @@ const Typingspeed = () => {
             </div>
             <br />
 
-            <button className={styles.strt} onClick={strt} disabled={timeLeft < 5}>start test</button>
 
+            {
+                timeLeft == 5 && <button className={styles.strt} onClick={strt} disabled={timeLeft < 5}>start test</button>
+            }
 
             <h1>time left: {timeLeft}</h1>
 
             {
-                timeLeft == 0 && <h1>final score: {score / 5} letters per second</h1>
+                timeLeft == 0 && <div>
+                    <h1>final score: {score / 5} letters per second</h1>
+                    <button
+                        onClick={rst}
+                        className={styles.rstrt}
+                    >
+                        reset
+                    </button>
+                </div>
             }
+
+
         </div>
     )
 }

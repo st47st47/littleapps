@@ -47,7 +47,7 @@ const Cooltimer = () => {
             <input type="text" placeholder='time in seconds....' style={{ backgroundColor: 'black', color: 'red' }} value={numb} onChange={(e) => { setNumb(Number(e.target.value)) }} />
 
             <button className={styles.ctbtn} onClick={strt}>start timer</button>
-            <button className={styles.ctbtn} onClick={() => { setTimeLeft(numb) }}>reset</button>
+            <button className={styles.ctbtn} onClick={() => { setTimeLeft(numb); clearInterval(myref.current) }}>reset</button>
 
         </div>
     )
