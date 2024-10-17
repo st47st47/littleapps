@@ -28,6 +28,7 @@ const Baseforlilapps = () => {
                 <h4><NavLink to='cooltimer' className={styles.navlinks}>timer</NavLink></h4>
                 <h4><NavLink to='bubbles' className={styles.navlinks}>bubbles</NavLink></h4>
                 <h4><NavLink to='mappins' className={styles.navlinks}>map pins</NavLink></h4>
+                <h4><NavLink to='pong' className={styles.navlinks} >pong</NavLink></h4>
             </nav>
 
             <Outlet />

@@ -17,6 +17,7 @@ import AnalogClock from './spaS/Analogclock'
 import Randompalette from './spaS/Randompalette'
 import Typespeed from './spaS/Typespeed'
 import Mappins from './spaS/Mappins'
+import Pong from './spaS/Pong'
 
 import Notfound from './Notfound'
 
@@ -42,6 +43,7 @@ const App = () => {
           <Route path='cooltimer' element={<Cooltimer />} />
           <Route path='bubbles' element={<Bubblesblowpop />} />
           <Route path='mappins' element={<Mappins />} />
+          <Route path='pong' element={<Pong />} />
         </Route>
 
         <Route path='*' element={<Notfound />} />

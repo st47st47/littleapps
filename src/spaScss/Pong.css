@@ -1,0 +1,52 @@
+.pongHero {
+
+    width: 100vw;
+    height: 85vh;
+
+    position: relative;
+}
+
+.playerOne {
+    width: 40px;
+    background-color: lightskyblue;
+
+    position: absolute;
+    left: 0px;
+}
+
+.playerTwo {
+    width: 40px;
+    background-color: lightgreen;
+
+    position: absolute;
+    right: 0px;
+}
+
+/*  */
+
+.playButton {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+}
+
+.resetAndScores {
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+}
+
+/*  */
+
+.ball {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border: 6px solid green;
+    border-radius: 50%;
+}

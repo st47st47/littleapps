@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom'
 const Homepagee = () => {
     return (
         <div className="hero">
-            <Navigate to='/littleapps/bubbles' />
+            <Navigate to='/littleapps/pong' />
         </div>
     )
 }
