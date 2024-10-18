@@ -1,10 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
 import '../spaScss/Pong.css'
+import boopSound from '../spaSstatic/boop.mp3'
+import buzzerSound from '../spaSstatic/buzzer.mp3'
+
 const boardHeight = 0.85 * window.innerHeight
 
 const startingPosition = { x: 0.5 * window.innerWidth, y: 0.49 * boardHeight }
 const padHeight = 200
 const wAndH = 0.05 * window.innerWidth
+
+const boopp = new Audio(boopSound)
+const buzzerr = new Audio(buzzerSound)
 
 const Pong = () => {
     const [pOneTop, setPOneTop] = useState(0)
@@ -52,22 +58,26 @@ const Pong = () => {
         if (ballPosition.x <= 0) {
             if (ballPosition.y > pOneTop && ballPosition.y < pOneTop + padHeight) {
                 directionRef.current.x = 1
+                boopp.play()
             }
             else {
                 clearInterval(gameIntervalRef.current)
                 setResetStatus(false)
                 setScores((prev) => { return { ...prev, pTwo: prev.pTwo + 1 } })
+                buzzerr.play()
             }
         }
 
         if (ballPosition.x >= window.innerWidth) {
             if (ballPosition.y > pTwoTop && ballPosition.y < pTwoTop + padHeight) {
                 directionRef.current.x = -1
+                boopp.play()
             }
             else {
                 clearInterval(gameIntervalRef.current)
                 setResetStatus(false)
                 setScores((prev) => { return { ...prev, pOne: prev.pOne + 1 } })
+                buzzerr.play()
             }
         }
 
